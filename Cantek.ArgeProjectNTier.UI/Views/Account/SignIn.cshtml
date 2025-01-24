@@ -1,0 +1,41 @@
+﻿@model AppUserLoginDto
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-6">
+        <div class="mt-5">
+            <form asp-action="SignIn" asp-controller="Account" method="post" class="p-4 w-50 mx-auto">
+                <div class="mb-3">
+                    <label>Kullanıcı adınız :</label>
+                    <input class="form-control" asp-for="@Model.Username" />
+                </div>
+                <div class="mb-3">
+                    <label>Şifreniz :</label>
+                    <input type="password" class="form-control" asp-for="@Model.Password" />
+                </div>
+                <div class="form-check d-flex justify-content-end mb-3">
+                    <input class="form-check-input me-2" type="checkbox" asp-for="@Model.RememberMe">
+                    <label class="form-check-label" for="RememberMe">
+                        Beni Hatırla
+                    </label>
+                </div>
+                <div class="mb-3 text-end">
+                    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-4" style="margin-top:100px">
+        <div class="text-danger text-center" asp-validation-summary="All">
+        </div>
+    </div>
+</div>
+
+
+<!--
+<div class="col-4 mt-5">
+    <div><img style="margin-top:50px; width:700px; height:500px" src="~/images/SignUpImg.jpg" /></div>
+</div>
+    -->
